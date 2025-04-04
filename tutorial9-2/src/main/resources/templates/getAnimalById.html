@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!-- saved from url=(0088)https://qrbriggs-byui.github.io/apj-files/tutorials/files/tutorial9-2/getAnimalById.html -->
+<html xmlns:th="http://www.thymeleaf.org"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Get Animal by ID</title>
+</head>
+<body>
+<h1>Get Animal by ID</h1>
+<form th:action="@{/getAnimalById}" method="post">
+    <input type="number" name="id" placeholder="Animal ID" fdprocessedid="zebzq5j">
+    <select name="method" fdprocessedid="cvq23c">
+        <option value="restTemplate">RestTemplate</option>
+        <option value="webClient">WebClient</option>
+    </select>
+    <button type="submit" fdprocessedid="qqx3tn">Get Animal</button>
+</form>
+<div th:if="${animal}">
+    <p><strong>Name:</strong> <span th:text="${animal.name}"></span></p>
+    <p><strong>Species:</strong> <span th:text="${animal.species}"></span></p>
+</div>
+<div th:if="${method}">
+    <p>Method Used: <span th:text="${method}"></span></p>
+</div>
+
+<span id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span></body></html>
