@@ -9,6 +9,10 @@
         <version>3.4.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+    <modules>
+        <module>web</module>
+        <module>api</module>
+    </modules>
     <groupId>edu.byui.apj.storefront</groupId>
     <artifactId>parent</artifactId>
     <version>1.0-SNAPSHOT</version>
