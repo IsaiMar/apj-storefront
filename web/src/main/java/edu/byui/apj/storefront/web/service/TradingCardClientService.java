@@ -2,6 +2,7 @@ package edu.byui.apj.storefront.web.service;
 
 import edu.byui.apj.storefront.web.model.TradingCard;
 import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.reactive.function.client.WebClient;
 import java.math.BigDecimal;
 import java.util.List;
@@ -11,9 +12,11 @@ public class TradingCardClientService {
 
     private final WebClient webClient;
 
-    // Constructor injection for WebClient
-    public TradingCardClientService(WebClient.Builder webClientBuilder) {
-        this.webClient = webClientBuilder.baseUrl("http://localhost:8081/api/cards").build(); // URL of the API
+    public TradingCardClientService(
+            WebClient.Builder webClientBuilder,
+            @Value("${tradingcard.service.url}") String baseUrl
+    ) {
+        this.webClient = webClientBuilder.baseUrl(baseUrl).build();
     }
 
     // Returns the list of cards starting at position page * size and returning size elements.
